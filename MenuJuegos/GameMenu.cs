@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Biblio1;
+using Biblio2;
 
 namespace MenuJuegos
 {
     public class GameMenu
     {
         Juego1 Juego1 = new Juego1();
+        Juego2 Juego2 = new Juego2();
         public void JuegosMenu() {
 
             int juegop;
@@ -24,7 +26,7 @@ namespace MenuJuegos
                 Console.BackgroundColor = ConsoleColor.Black; Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("1. [A]lumine's Fate");
                 Thread.Sleep(500);
-                Console.WriteLine("2. ");
+                Console.WriteLine("2. Adivina la fruta");
                 Thread.Sleep(500);
                 Console.WriteLine("3. ");
                 Thread.Sleep(500);
@@ -72,7 +74,67 @@ namespace MenuJuegos
                             return;
                         }
                     case 2: //Biblioteca juego 2
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("¡Adivina la fruta!");
+                        Thread.Sleep(300);
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("Pista: " + Juego2.ObtenerPista());
+                        Thread.Sleep(300);
+                        Console.WriteLine();
 
+
+                        for (int intento = 1; intento <= 2; intento++)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine("Intento: ¿Cuál es la fruta? ");
+                            Thread.Sleep(300);
+                            Console.WriteLine();
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            string respuesta = Console.ReadLine();
+
+                            Console.Clear();
+
+                            if (Juego2.Adivinar(respuesta))
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                Console.WriteLine();
+                                Console.WriteLine("¡Adivinaste!");
+                                Thread.Sleep(1000);
+                                break;
+
+                            }
+                            else
+                            {
+                                if (intento == 1)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("No adivinaste. Te queda 1 intento."); Console.WriteLine();
+                                    Thread.Sleep(300);
+                                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    Console.WriteLine("Si estás segur@, por favor revisa la ortografía y acentuación~"); Console.WriteLine();
+                                    Thread.Sleep(300);
+                                }
+
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine(" No adivinaste. La fruta era: " + Juego2.ObtenerFruta());
+                                    Thread.Sleep(1000);
+                                    Console.WriteLine();
+                                }
+                            }
+
+                        }
+                        Console.Clear();
+                        Console.WriteLine();
+                        Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("Presiona cualquier tecla para salir...");
+                        Console.WriteLine();
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 3: //Biblioteca juego 3
 

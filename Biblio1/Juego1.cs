@@ -105,7 +105,7 @@ namespace Biblio1
             Console.WriteLine("                              ------------------------------");
             Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("                                           " + name);
+            Console.WriteLine("                                       " + name);
             Console.ForegroundColor = ConsoleColor.Gray;
             Thread.Sleep(1000);
             Console.WriteLine("                              ------------------------------");

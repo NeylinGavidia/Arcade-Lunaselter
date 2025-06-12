@@ -127,7 +127,7 @@ namespace MenuJuegos
 
                         }
                         Console.Clear();
-                        Console.WriteLine();
+                        Console.WriteLine(); Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkGray;

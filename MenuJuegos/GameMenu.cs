@@ -38,18 +38,39 @@ namespace MenuJuegos
                 switch (juegop)
                 {
                     case 1: //Bibliotea juego 1
-                        Juego1.Menu("cargando...");
-                        Juego1.seleccion();
-                        Console.Clear();
-                        Juego1.intro("C A R G A N D O");
-                        //esto es para cuando se rechaza seguir jugando //Console.WriteLine("------------------------ Sistema: Gracias por jugar :D ------------------------");
-                        Juego1.tutorial();
-                        Juego1.capitulo1();
-                        Juego1.capitulo2();
-                        Juego1.capitulo3("C A R G A N D O");
-                        Juego1.capitulo4();
-                        Juego1.batallafinal("C A R G A N D O");
-                        break;
+                        //Juego1.Menu("cargando...");
+                        //Juego1.seleccion();
+                        //Console.Clear();
+                        if (Juego1.intro("C A R G A N D O")) //esto es para cuando se rechaza seguir jugando / se debe hacer bool y condicionar
+                        {
+                            Juego1.tutorial();
+                            Juego1.capitulo1();
+                            Juego1.capitulo2();
+                            if (Juego1.capitulo3("C A R G A N D O")) 
+                            {
+                                Juego1.capitulo4();
+                                Juego1.batallafinal("C A R G A N D O");
+                                Console.WriteLine("------------------------ Sistema: Gracias por jugar :D ------------------------");
+                                Thread.Sleep(2000);
+                                Console.Clear();
+                                return;
+                            }
+                            else
+                            {
+                                Console.WriteLine("------------------------ Sistema: Gracias por jugar :D ------------------------");
+                                Thread.Sleep(2000);
+                                Console.Clear();
+                                return;
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("------------------------ Sistema: Gracias por jugar :D ------------------------");
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            return;
+                        }
                     case 2: //Biblioteca juego 2
 
                         break;
@@ -61,12 +82,15 @@ namespace MenuJuegos
                         break;
                     case 0:
                         //retorno al menu principal
-                        break;
+                        Console.Clear();
+                        return;
                     default:
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("Sistema: Opción no válida, intentalo de nuevo");
                         break;
                 }
             }
-            while (juegop != 0 && juegop != 1 && juegop != 2 && juegop != 3 && juegop != 4) ;
+            while (true); //misma condicion que en el menu principal, solo bool para no ser redundantes y poder regresar
         }
     }
 }

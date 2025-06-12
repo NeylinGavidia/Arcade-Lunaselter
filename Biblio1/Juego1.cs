@@ -14,7 +14,7 @@ namespace Biblio1
         int defe = 40;
         int pv = 60; //prota
         int atq = 20;
-        int def = 10;
+        int def = 20;
         int epv = 70; //boss secreto
         int eatq = 40;
         int edef = 20;
@@ -64,9 +64,9 @@ namespace Biblio1
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("(NOTA: No influye en la historia)");
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
             do
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1) Mago/a " + "2) Arquero/a " + "y 3) Espadachin");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
@@ -159,7 +159,7 @@ namespace Biblio1
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.ReadKey();
         }
-        public void intro(string carga) //intro de la historia
+        public bool intro(string carga) //intro de la historia
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
@@ -316,7 +316,7 @@ namespace Biblio1
                         Thread.Sleep(500);
                         Console.WriteLine("Tus pensamientos son interrumpidos por Ylx");
                         Thread.Sleep(500);
-                        break;
+                        return true;
                     case 2: //Aqui debe regresar al menu principal
                         Console.BackgroundColor = ConsoleColor.Black; Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Ylx ^ ^: Así que no...");
@@ -374,14 +374,14 @@ namespace Biblio1
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Gray; Console.WriteLine("Sistema: Quizás deberías intentar ser más amable la siguiente vez.");
                         Console.WriteLine();
-                        return; //falta ver como hacer que se regrese al menu principal despues de este caso
+                        return false; //falta ver como hacer que se regrese al menu principal despues de este caso
                     default:
-                        Console.WriteLine("Sistema: Opción no válida");
+                        Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                         Console.WriteLine();
                         break;
                 }
             }
-            while (afir != 1 && afir != 2);
+            while (true);
         }
         public void tutorial()
         {
@@ -419,7 +419,7 @@ namespace Biblio1
             Console.ReadKey();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("El ente te ha visto y viene hacia ti (Ylx te hace porras de fondo, y te mira expectante");
+            Console.WriteLine("El ente te ha visto y viene hacia ti (Ylx te hace porras de fondo, y te mira expectante)");
             Thread.Sleep(500);
             Console.WriteLine();
             Console.WriteLine("No tienes más armas que tu puño limpio");
@@ -487,7 +487,7 @@ namespace Biblio1
                         Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine(": Sigamos avanzando hacia el bosque~");
                         Thread.Sleep(500);
-                        break;
+                        return;
                     case 2:
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
                         Console.Write("Ylx (-''-)");
@@ -502,7 +502,7 @@ namespace Biblio1
                         Thread.Sleep(550);
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine();
-                        break;
+                        return;
                     case 3:
                         def = def + 5;
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
@@ -531,14 +531,14 @@ namespace Biblio1
                         Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine(": Sigamos avanzando hacia el bosque~");
                         Thread.Sleep(500);
-                        break;
+                        return;
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                         break;
                 }
 
             }
-            while (op1 != 1 && op1 != 2 && op1 != 3);
+            while (true); //si cambias a true tendras que poner return o eso presumo
         }
         public void capitulo1()
         {
@@ -650,7 +650,7 @@ namespace Biblio1
                         Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine(": Esto es genial~ Parece que podemos ir hacia el castillo ahora. Let's gooo");
                         Thread.Sleep(500);
-                        break;
+                        return;
                     case 2:
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
                         Console.Write("Ylx ('v')");
@@ -765,7 +765,7 @@ namespace Biblio1
                             }
                         }
                         while (op3 != 1 && op3 != 2 && op3 != 3);
-                        break;
+                        return;
                     case 3:
                         atq = atq - 5;
                         def = def - 5;
@@ -805,14 +805,14 @@ namespace Biblio1
                         Console.WriteLine(": Vayamos hacia el castillo, si la podredumbre nos atrapa, seremos corrompidos.");
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine();
-                        break;
+                        return;
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                         Console.WriteLine();
                         break;
                 }
             }
-            while (op2 != 1 && op2 != 2 && op2 != 3);
+            while (true);
         }
         public void capitulo2()
         {
@@ -864,7 +864,7 @@ namespace Biblio1
                         Console.WriteLine(": Por suerte, logramos librarnos de él~ parecía ser un traidor.");
                         Thread.Sleep(800);
                         Console.WriteLine();
-                        break;
+                        return;
                     case 2:
                         pv = pv - 5;
                         atq = atq - 10;
@@ -887,7 +887,7 @@ namespace Biblio1
                         Console.WriteLine("[Mataste un inocente. Se aplica una maldición (-10 def, -10 atq, - 5 PV)]");
                         Thread.Sleep(800);
                         Console.WriteLine();
-                        break;
+                        return;
                     case 3:
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
                         Console.Write("Ylx (´n´)");
@@ -1002,7 +1002,7 @@ namespace Biblio1
                                     Thread.Sleep(800);
                                     Console.WriteLine();
                                     Console.WriteLine("Asienten y corres junto a Ylx hacia el interior, mientras ves a Lyndur pelear contra los corrompidos");
-                                    break;
+                                    return;
                                 case 2:
                                     Console.WriteLine();
                                     Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Black;
@@ -1030,24 +1030,23 @@ namespace Biblio1
                                     Thread.Sleep(800);
                                     Console.WriteLine();
                                     Console.WriteLine("Él sonrie, mientras corres junto a Ylx, una vez dentro, vez como Lyndur cierra la puerta antes de ser atravesado pr una lanza.");
-                                    break;
+                                    return;
                                 default:
                                     Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                                     Console.WriteLine();
                                     break;
                             }
                         }
-                        while (confir != 1 && confir != 2);
-                        break;
+                        while (true);
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                         Console.WriteLine();
                         break;
                 }
             }
-            while (op4 != 1 && op4 != 2 && op4 != 3);
+            while (true);
         }
-        public void capitulo3(string carg)
+        public bool capitulo3(string carg)
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ReadKey();
@@ -1134,12 +1133,12 @@ namespace Biblio1
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
                         Console.Write("Ylx");
                         Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                        Console.WriteLine(": Caímos en una trampa... Él nos encontró primero...");
+                        Console.WriteLine(": El aire se siente frío, ¿qué está pasando? La copa...");
                         Console.ForegroundColor = ConsoleColor.Black;
                         Thread.Sleep(800);
                         Console.WriteLine();
                         Console.WriteLine("Ylx se coloca delante de ti, redirigiendo toda la podredumbre que se dirigía a ti, entonces, su luz se apaga.");
-                        break;
+                        return true;
                     case 2:
                         atq = atq + 10;
                         Console.WriteLine();
@@ -1175,13 +1174,14 @@ namespace Biblio1
                         Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
                         Console.Write("Ylx");
                         Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                        Console.WriteLine(": Caímos en una trampa... Él nos encontró primero...");
+                        Console.WriteLine(": El aire se siente frío, ¿qué está pasando? La copa...");
                         Console.ForegroundColor = ConsoleColor.Black;
                         Thread.Sleep(800);
                         Console.WriteLine();
                         Console.WriteLine("Ylx se coloca delante de ti, redirigiendo toda la podredumbre que se dirigía a ti, entonces, su luz se apaga.");
-                        break;
+                        return true;
                     case 3:
+                        apv = pv;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine();
                         Console.WriteLine("Viste tu reflejo en el agua, hasta que tu vista se nubló y todo se volvió rojo alrededor. No viste a Ylx cerca.");
@@ -1215,7 +1215,7 @@ namespace Biblio1
                         Console.Clear();
                         do
                         {
-                            while (pv > 0 || epv > 0)
+                            while (apv > 0 || epv > 0)
                             {
                                 Console.BackgroundColor = ConsoleColor.Black; Console.ForegroundColor = ConsoleColor.Magenta;
                                 Console.WriteLine("Alator");
@@ -1245,7 +1245,6 @@ namespace Biblio1
                                         Console.WriteLine("[Has atacado a Alator, le has hecho " + v1 + " de daño]");
                                         Console.WriteLine();
                                         Thread.Sleep(1000);
-                                        apv = pv;
                                         apv = (apv + def) - eatq;
                                         v2 = (eatq - def);
                                         if (v2 < 0)
@@ -1256,14 +1255,14 @@ namespace Biblio1
                                         Thread.Sleep(2000);
                                         break;
                                     case 2:
-                                        pv = 0;
+                                        apv = 0;
                                         break;
                                     default:
                                         Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                                         Console.WriteLine();
                                         break;
                                 }
-                                if (pv > 0 && epv > 0)
+                                if (apv > 0 && epv > 0)
                                 {
                                     Console.WriteLine();
                                     Console.Clear();
@@ -1306,7 +1305,7 @@ namespace Biblio1
                                     Thread.Sleep(800);
                                     Console.WriteLine("Lo tranquilizas y luego sientes como regresan a su realidad.");
                                     Thread.Sleep(2000);
-                                    return;
+                                    return true;
                                 }
                                 else
                                 {
@@ -1379,18 +1378,18 @@ namespace Biblio1
                                     Console.ForegroundColor = ConsoleColor.DarkGray; Console.WriteLine("Sistema: Decisiones erradas, solo llevan al fracaso");
                                     Console.ReadKey();
                                     Console.Clear();
-                                    return; //falta ver como hacer que se regrese al menu principal despues de este caso
+                                    return false; //falta ver como hacer que se regrese al menu principal despues de este caso
                                 }
                             }
                         }
-                        while (alt1 != 1 && alt1 != 2);
-                        break;
+                        while (true);
                     default:
-                        Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida"); ;
+                        Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
+                        Console.WriteLine();
                         break;
                 }
             }
-            while (op5 != 1 && op5 != 2 && op5 != 3);
+            while (true); //cambiar todos los do-while con switch a true /solo los finales, sino pueden cortar los procesos
         }
         public void capitulo4()
         {
@@ -1422,26 +1421,26 @@ namespace Biblio1
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("[Se ha añadido 'Libro maldito' al inventario (+20 atq)]");
                         Console.WriteLine();
-                        break;
+                        return;
                     case 2:
                         def = def + 20;
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("[Se ha añadido 'Capa sólida' al inventario (+20 def)]");
                         Console.WriteLine();
-                        break;
+                        return;
                     case 3:
                         pv = pv + 20;
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("[Se ha añadido 'Vida líquida' al inventario (+20 pv)]");
                         Console.WriteLine();
-                        break;
+                        return;
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
                         Console.WriteLine();
                         break;
                 }
             }
-            while (op6 != 1 && op6 != 2 && op6 != 3);
+            while (true);
         }
         public void batallafinal(string max)
         {
@@ -1833,11 +1832,11 @@ namespace Biblio1
                         Console.ForegroundColor = ConsoleColor.DarkGray; Console.WriteLine("Sistema: No diste salvación, pero trajiste esperanza...");
                         Console.ReadKey();
                         Console.Clear();
-                        return; //falta ver como hacer que se regrese al menu principal despues de este caso
+                        return;
                     }
                 }
             }
-            while (alt2 != 1 && alt2 != 2 && alt2 != 3);
+            while (true);
         }
     }
 }

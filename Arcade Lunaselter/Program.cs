@@ -37,7 +37,7 @@ namespace Arcade_Lunaselter
             do
             {
                 Console.WriteLine();
-                Console.ForegroundColor=ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("BIENVENID@ al Arcade Lunaselter, elige una opción:");
                 Thread.Sleep(500);
                 Console.WriteLine();
@@ -83,6 +83,7 @@ namespace Arcade_Lunaselter
                         Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine("                                                  PRESIONA ENTER PARA SALIR");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 0:
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -104,24 +105,33 @@ namespace Arcade_Lunaselter
                             {
                                 Console.WriteLine("Sistema: Es una pena QwQ. Por favor, vuelve pronto ^^");
                                 Thread.Sleep(1500);
+                                Console.ReadKey();
+                                Console.Clear();
                                 return; //cierra el juego
                             }
                             else if (aux == 2)
                             {
                                 Console.WriteLine("Sistema: Yay~ Ya te regreso al menú principal (/^^)/");
                                 Thread.Sleep(1500); //aqui debe retornar al menu principal
-                                
+                                Console.Clear();
+                                break;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                Console.WriteLine("Sistema: Opción no válida, intentalo de nuevo");
                             }
                         }
                         while (aux != 1 && aux != 2);
-                            break;
+                        break;
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine("Sistema: Opción no válida, intentalo de nuevo");
                         break;
                 }
             }
-            while (menuop != 0 && menuop !=1 && menuop !=2);  
+            while (true);  //esto es en true y no con condiciones, ya que las condiciones se estan manejando desde el switch
+            //ponerle condiciones en lugar de bool, repite lo que ya se repite xd es decir es redundante
         }
     }
 }

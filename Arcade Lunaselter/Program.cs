@@ -46,7 +46,7 @@ namespace Arcade_Lunaselter
                 Thread.Sleep(500);
                 Console.WriteLine("2. Ver créditos");
                 Thread.Sleep(500);
-                Console.WriteLine("0. Salir");
+                Console.WriteLine("0. Salir -(> <;-)");
                 Console.WriteLine();
                 menuop = int.Parse(Console.ReadLine());
                 Console.Clear();
@@ -56,7 +56,33 @@ namespace Arcade_Lunaselter
                         juegos.JuegosMenu();
                         break;
                     case 2:
-
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine();
+                        Console.WriteLine("           * --------------------------------------------- CRÉDITOS --------------------------------------------- *");
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           |     ->  C U R S O : Fundamento de algoritmos                                                         |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           |     ->  A U T O R E S:                                                                               |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           |        1. Anderson Jair Cruzado Alvarez                                                              |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |        2. Neylin Yoselin Gavidia Saavedra                                                            |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |        3. Luz Marita Sánchez Pérez                                                                   |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |        4. Nataly Jhyre Solano Gómez                                                                  |");
+                        Thread.Sleep(300);
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           |                                                                                                      |");
+                        Console.WriteLine("           * ------------------------------------------ THANKS SO MUCH ------------------------------------------ *");
+                        Console.WriteLine();
+                        Thread.Sleep(2000);
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.WriteLine("                                                  PRESIONA ENTER PARA SALIR");
+                        Console.ReadKey();
                         break;
                     case 0:
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -76,14 +102,14 @@ namespace Arcade_Lunaselter
                             Console.WriteLine();
                             if (aux == 1)
                             {
-                                Console.WriteLine("Sistema: Es una pena :c. Por favor, vuelve pronto ^^");
+                                Console.WriteLine("Sistema: Es una pena QwQ. Por favor, vuelve pronto ^^");
                                 Thread.Sleep(1500);
                                 return; //cierra el juego
                             }
                             else if (aux == 2)
                             {
                                 Console.WriteLine("Sistema: Yay~ Ya te regreso al menú principal (/^^)/");
-                                Thread.Sleep(1500); //aqui debe retornar al menu comun
+                                Thread.Sleep(1500); //aqui debe retornar al menu principal
                                 
                             }
                         }

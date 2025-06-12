@@ -1029,7 +1029,7 @@ namespace Biblio1
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Thread.Sleep(800);
                                     Console.WriteLine();
-                                    Console.WriteLine("Él sonrie, mientras corres junto a Ylx, una vez dentro, vez como Lyndur cierra la puerta antes de ser atravesado pr una lanza.");
+                                    Console.WriteLine("Él sonrie, mientras corres junto a Ylx, una vez dentro, vez como Lyndur cierra la puerta antes de ser atravesado por una lanza.");
                                     return;
                                 default:
                                     Console.ForegroundColor = ConsoleColor.DarkGreen; Console.WriteLine("Sistema: Opción no válida");
@@ -1137,7 +1137,6 @@ namespace Biblio1
                         Console.ForegroundColor = ConsoleColor.Black;
                         Thread.Sleep(800);
                         Console.WriteLine();
-                        Console.WriteLine("Ylx se coloca delante de ti, redirigiendo toda la podredumbre que se dirigía a ti, entonces, su luz se apaga.");
                         return true;
                     case 2:
                         atq = atq + 10;
@@ -1178,7 +1177,6 @@ namespace Biblio1
                         Console.ForegroundColor = ConsoleColor.Black;
                         Thread.Sleep(800);
                         Console.WriteLine();
-                        Console.WriteLine("Ylx se coloca delante de ti, redirigiendo toda la podredumbre que se dirigía a ti, entonces, su luz se apaga.");
                         return true;
                     case 3:
                         apv = pv;

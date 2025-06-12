@@ -38,9 +38,9 @@ namespace MenuJuegos
                 switch (juegop)
                 {
                     case 1: //Bibliotea juego 1
-                        //Juego1.Menu("cargando...");
-                        //Juego1.seleccion();
-                        //Console.Clear();
+                        Juego1.Menu("cargando...");
+                        Juego1.seleccion();
+                        Console.Clear();
                         if (Juego1.intro("C A R G A N D O")) //esto es para cuando se rechaza seguir jugando / se debe hacer bool y condicionar
                         {
                             Juego1.tutorial();

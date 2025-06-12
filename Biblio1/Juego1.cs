@@ -1446,6 +1446,7 @@ namespace Biblio1
             Thread.Sleep(800);
             Console.WriteLine("De pronto, sientes el aire enfriarse y una voz habla a tus espaldas.");
             Console.WriteLine();
+            Console.WriteLine("Ylx se coloca delante de ti, redirigiendo toda la podredumbre que se dirigía a ti, entonces, su luz se apaga.");
             Console.BackgroundColor = ConsoleColor.Black; Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.ReadKey();
             Console.Clear();

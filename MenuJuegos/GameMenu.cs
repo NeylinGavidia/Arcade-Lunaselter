@@ -6,13 +6,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using Biblio1;
 using Biblio2;
+using Biblio3;
 
 namespace MenuJuegos
 {
     public class GameMenu
     {
+        //Bibliotecas de juegos
         Juego1 Juego1 = new Juego1();
         Juego2 Juego2 = new Juego2();
+        Juego3 Juego3 = new Juego3();
         public void JuegosMenu() {
 
             int juegop;
@@ -28,7 +31,7 @@ namespace MenuJuegos
                 Thread.Sleep(500);
                 Console.WriteLine("2. Adivina la fruta");
                 Thread.Sleep(500);
-                Console.WriteLine("3. ");
+                Console.WriteLine("3. MEMO");
                 Thread.Sleep(500);
                 Console.WriteLine("4. ");
                 Thread.Sleep(500);
@@ -137,7 +140,82 @@ namespace MenuJuegos
                         Console.Clear();
                         break;
                     case 3: //Biblioteca juego 3
+                        int opcion;
 
+                        do
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine("Escoger nivel de dificultad");
+                            Console.WriteLine();
+                            Thread.Sleep(300);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.WriteLine("1. Nivel Facil");
+                            Thread.Sleep(300);
+                            Console.WriteLine("2. Nivel Medio");
+                            Thread.Sleep(300);
+                            Console.WriteLine("3. Nivel Dificil");
+                            Thread.Sleep(300);
+                            Console.WriteLine("0. Salir");
+                            Thread.Sleep(300);
+                            Console.WriteLine();
+                            opcion = int.Parse(Console.ReadLine());
+
+                            switch (opcion)
+                            {
+                                case 0:
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    Console.WriteLine("Saliendo...");
+                                    Console.WriteLine();
+                                    Thread.Sleep(500);
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("¡Hasta pronto!");
+                                    Thread.Sleep(1000);
+                                    break;
+                                case 1:
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("A continuacion se mostraran 4 números. ¡PREPARATE!");
+                                    Thread.Sleep(4000);
+                                    Console.Clear();
+                                    Console.Beep(800, 300);
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Juego3.facil();
+                                    break;
+                                case 2:
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine("A continuacion se mostraran 6 números, preparate");
+                                    Thread.Sleep(2000);
+                                    Console.Clear();
+                                    Console.Beep(800, 300);
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Juego3.medio();
+                                    break;
+                                case 3:
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("A continuacion se mostraran 8 números, preparate");
+                                    Thread.Sleep(2000);
+                                    Console.Clear();
+                                    Console.Beep(800, 300);
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Juego3.dificil();
+                                    break;
+                                default:
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    Console.WriteLine("Opción no valida");
+                                    Console.WriteLine();
+                                    break;
+                            }
+                        } while (opcion != 0);
+                        Console.Clear();
                         break;
                     case 4: //Biblioteca juego 4
 

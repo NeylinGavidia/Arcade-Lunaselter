@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{019B213C-87DA-4610-8FBD-6CC6C92A6E28}</ProjectGuid>
+    <ProjectGuid>{A1325947-CA7C-481B-9FC1-D64DB0339AF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MenuJuegos</RootNamespace>
-    <AssemblyName>MenuJuegos</AssemblyName>
+    <RootNamespace>Biblio3</RootNamespace>
+    <AssemblyName>Biblio3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,22 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameMenu.cs" />
+    <Compile Include="Juego3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Biblio1\Biblio1.csproj">
-      <Project>{f81bf771-35f6-4841-8836-724458a8e2ee}</Project>
-      <Name>Biblio1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblio2\Biblio2.csproj">
-      <Project>{bbc8200b-dc7b-4b66-b35b-2605b3bf8316}</Project>
-      <Name>Biblio2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblio3\Biblio3.csproj">
-      <Project>{a1325947-ca7c-481b-9fc1-d64db0339af8}</Project>
-      <Name>Biblio3</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

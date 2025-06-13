@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Biblio1;
 using Biblio2;
 using Biblio3;
+using Biblio4;
 
 namespace MenuJuegos
 {
@@ -16,6 +17,7 @@ namespace MenuJuegos
         Juego1 Juego1 = new Juego1();
         Juego2 Juego2 = new Juego2();
         Juego3 Juego3 = new Juego3();
+        Juego4 Juego4 = new Juego4();
         public void JuegosMenu() {
 
             int juegop;
@@ -36,7 +38,7 @@ namespace MenuJuegos
                 Console.WriteLine("3. M E M O R I C E");
                 Thread.Sleep(500);
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("4. ");
+                Console.WriteLine("4. Life's Game");
                 Thread.Sleep(500);
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
@@ -56,7 +58,7 @@ namespace MenuJuegos
                             Juego1.tutorial();
                             Juego1.capitulo1();
                             Juego1.capitulo2();
-                            if (Juego1.capitulo3("C A R G A N D O")) 
+                            if (Juego1.capitulo3("C A R G A N D O"))
                             {
                                 Juego1.capitulo4();
                                 Juego1.batallafinal("C A R G A N D O");
@@ -223,19 +225,72 @@ namespace MenuJuegos
                         Console.Clear();
                         break;
                     case 4: //Biblioteca juego 4
+                        int opcionMenu;
 
-                        break;
-                    case 0:
-                        //retorno al menu principal
-                        Console.Clear();
-                        return;
-                    default:
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.WriteLine("Sistema: Opción no válida, intentalo de nuevo");
-                        break;
+                        do
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine("======================================");
+                            Console.WriteLine("   LA GRAN AVENTURA DE TU VIDA");
+                            Console.WriteLine("======================================");
+                            Console.ResetColor();
+                            Thread.Sleep(300);
+                            Console.WriteLine();
+                            Console.WriteLine("1. Jugar");
+                            Thread.Sleep(300);
+                            Console.WriteLine("2. Salir");
+                            Thread.Sleep(300);
+                            Console.WriteLine();
+                            Console.Write("Selecciona una opción: ");
+
+                            if (!int.TryParse(Console.ReadLine(), out opcionMenu))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine();
+                                Console.WriteLine("Por favor, introduce un número válido.");
+                                Console.ResetColor();
+                                Console.ReadKey();
+                                continue;
+                            }
+
+                            switch (opcionMenu)
+                            {
+                                case 1:
+                                    Juego4.EjecutarJuego(Juego4);
+                                    break;
+
+                                case 2:
+                                    Console.Clear();
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.WriteLine();
+                                    Console.WriteLine("¡Gracias por jugar! Hasta la próxima.");
+                                    Console.WriteLine();
+                                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    Console.WriteLine("Saliendo...");
+                                    Thread.Sleep(2000);
+                                    Console.Clear();
+                                    return;
+
+                                default:
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Opción inválida. Intenta nuevamente.");
+                                    Console.WriteLine();
+                                    Console.ResetColor();
+                                    Console.ReadKey();
+                                    break;
+                            }
+
+                        } while (true);
+
+
+
+
+
                 }
             }
             while (true); //misma condicion que en el menu principal, solo bool para no ser redundantes y poder regresar
+
         }
     }
 }

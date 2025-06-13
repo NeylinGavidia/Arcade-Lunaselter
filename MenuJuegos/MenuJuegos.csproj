@@ -42,25 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameMenu.cs" />
+    <Compile Include="Juego1.cs" />
+    <Compile Include="Juego2.cs" />
+    <Compile Include="Juego3.cs" />
+    <Compile Include="Juego4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Biblio1\Biblio1.csproj">
-      <Project>{f81bf771-35f6-4841-8836-724458a8e2ee}</Project>
-      <Name>Biblio1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblio2\Biblio2.csproj">
-      <Project>{bbc8200b-dc7b-4b66-b35b-2605b3bf8316}</Project>
-      <Name>Biblio2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblio3\Biblio3.csproj">
-      <Project>{a1325947-ca7c-481b-9fc1-d64db0339af8}</Project>
-      <Name>Biblio3</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Biblio4\Biblio4.csproj">
-      <Project>{2464901e-8ec6-4227-878c-b0bcb7cbe8b5}</Project>
-      <Name>Biblio4</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

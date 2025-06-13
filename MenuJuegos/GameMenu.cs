@@ -4,10 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Biblio1;
-using Biblio2;
-using Biblio3;
-using Biblio4;
 
 namespace MenuJuegos
 {
@@ -49,6 +45,9 @@ namespace MenuJuegos
                 Console.WriteLine();
                 switch (juegop)
                 {
+                    case 0:
+                        Console.Clear();
+                        return;
                     case 1: //Bibliotea juego 1
                         Juego1.Menu("cargando...");
                         Juego1.seleccion();
@@ -282,11 +281,10 @@ namespace MenuJuegos
                             }
 
                         } while (true);
-
-
-
-
-
+                    default:
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("Sistema: Opción no válida, intentalo de nuevo");
+                        break;
                 }
             }
             while (true); //misma condicion que en el menu principal, solo bool para no ser redundantes y poder regresar

@@ -10,14 +10,16 @@ namespace MenuJuegos
     {
         private string[] frutas = { "manzana", "plátano", "naranja", "piña", "fresa" };
         private string[] pistas = {
-            "Es roja, dulce y crujiente.",
-            "Es amarilla y tiene una cáscara fácil de pelar.",
-            "es redonda y su color es su nombre.",
-            "Tiene una corona y es tropical.",
-            "Es pequeña, roja y con semillas por fuera."};
+        "Es roja, dulce y crujiente.",
+        "Es amarilla y tiene una cáscara fácil de pelar.",
+        "Es redonda y su color es su nombre.",
+        "Tiene una corona y es tropical.",
+        "Es pequeña, roja y con semillas por fuera."};
 
         private string frutaSecreta;
         private string pista;
+
+        private static Random rand = new Random(); // ¡Importante!
 
         public Juego2()
         {
@@ -26,7 +28,6 @@ namespace MenuJuegos
 
         private void SeleccionarFrutaAleatoria()
         {
-            Random rand = new Random();
             int indice = rand.Next(frutas.Length);
             frutaSecreta = frutas[indice];
             pista = pistas[indice];

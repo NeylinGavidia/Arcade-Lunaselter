@@ -83,20 +83,21 @@ namespace MenuJuegos
                             return;
                         }
                     case 2: //Biblioteca juego 2
+
+                        Juego2 juego = new Juego2();
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("¡Adivina la fruta!");
                         Thread.Sleep(300);
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("Pista: " + Juego2.ObtenerPista());
+                        Console.WriteLine("Pista: " + juego.ObtenerPista());
                         Thread.Sleep(300);
                         Console.WriteLine();
-
 
                         for (int intento = 1; intento <= 2; intento++)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkYellow;
-                            Console.WriteLine("Intento: ¿Cuál es la fruta? ");
+                            Console.WriteLine("Intento: ¿Cuál es la fruta?");
                             Thread.Sleep(300);
                             Console.WriteLine();
                             Console.ForegroundColor = ConsoleColor.Gray;
@@ -104,44 +105,40 @@ namespace MenuJuegos
 
                             Console.Clear();
 
-                            if (Juego2.Adivinar(respuesta))
+                            if (juego.Adivinar(respuesta))
                             {
                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                 Console.WriteLine();
                                 Console.WriteLine("¡Adivinaste!");
                                 Thread.Sleep(1000);
                                 break;
-
                             }
                             else
                             {
                                 if (intento == 1)
                                 {
                                     Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                    Console.WriteLine("No adivinaste. Te queda 1 intento."); Console.WriteLine();
+                                    Console.WriteLine("No adivinaste. Te queda 1 intento.");
                                     Thread.Sleep(300);
                                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                                    Console.WriteLine("Si estás segur@, por favor revisa la ortografía y acentuación~"); Console.WriteLine();
+                                    Console.WriteLine("Si estás segur@, por favor revisa la ortografía y acentuación~");
                                     Thread.Sleep(300);
                                 }
-
                                 else
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine(" No adivinaste. La fruta era: " + Juego2.ObtenerFruta());
+                                    Console.WriteLine("No adivinaste. La fruta era: " + juego.ObtenerFruta());
                                     Thread.Sleep(1000);
-                                    Console.WriteLine();
                                 }
                             }
-
                         }
+
                         Console.Clear();
-                        Console.WriteLine(); Console.ForegroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
-                        Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkGray;
-                        Console.WriteLine("Presiona cualquier tecla para salir...");
                         Console.WriteLine();
+                        Console.WriteLine("Presiona cualquier tecla para salir...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
